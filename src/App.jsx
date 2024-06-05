@@ -1,23 +1,30 @@
 import "./App.css";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import ProjectCard from "./components/ProjectCard";
-import TechCard from "./components/TechCard";
+import Project from "./components/ProjectCard";
+import Hero from "./components/Hero";
+import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar";
 import { projects } from "./utils/project";
 import { skills } from "./utils/skills";
+import TechCard from "./components/TechCard";
 
 function App() {
   return (
-    <>
-      <div className="">
-        <Navbar />
-        <Hero />
-        <TechCard skills={skills} />
-        <ProjectCard projects={projects} />
-        <Footer />
+    <Router>
+      <div className="flex relative"  >
+        <Sidebar />
+        <div className="flex-grow">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Hero  />} />
+            <Route path="/projects" element={<Project projects={projects} />} />
+            <Route path="/skills" element={<TechCard skills={skills} />} />
+          </Routes>
+          <Footer />
+        </div>
       </div>
-    </>
+    </Router>
   );
 }
 

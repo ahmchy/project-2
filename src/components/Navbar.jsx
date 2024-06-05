@@ -8,7 +8,7 @@ const Navbar = () => {
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <span className="self-center text-2xl font-semibold whitespace-nowrap ">
-              PD John
+              {/* Project 1 */}
             </span>
           </a>
           <button
@@ -35,7 +35,12 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          <div
+
+          <div className="flex justify-center items-center gap-2">
+            <div className=" bg-red-400 h-9 w-9 flex justify-center items-center rounded-full">K</div>
+            <p>project 2</p>
+          </div>
+          {/* <div
             className="hidden w-full md:block md:w-auto"
             id="navbar-solid-bg"
           >
@@ -66,7 +71,7 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </nav>
     </div>

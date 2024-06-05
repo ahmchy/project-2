@@ -1,56 +1,38 @@
 const Project = ({ projects }) => {
   console.log(projects);
   return (
-    <div id="projects" className="max-w-screen-xl mx-auto">
+    <div id="projects" className="max-w-screen-xl pt mx-auto">
       <p className="mt-10 text-6xl font-bold "> Projects</p>
-      <div className="grid grid-cols-3 gap-5 pb-5">
+      <div className="grid grid-cols-3 pt-10 gap-5 pb-5">
         {" "}
         {projects.map((project, index) => (
           <div
             key={index}
-            className="mx-auto my-10 border border-solid shadow-md bg-warning/10 border-warning/5 rounded-small bg-zinc-50 hover:shadow-xl hover:border hover:border-primary lg:my-14"
+            className="w-full h-full flex justify-center items-center"
           >
-            <a
-              //   to={`/projectdetails/${project.slug}`}
-              className="flex flex-col "
-            >
-              {/* <div className="">
-                <img
-                  className="bg-blue-50 rounded-tl-xl rounded-tr-xl lg:rounded-tr-none lg:rounded-l-xl "
-                //   src="./default-img.png"
-                  src={
-                    project.image === null
-                      ? "./default-project-img.png"
-                      : project.image
-                    // project.image
-                  }
-                  
-                  alt="Shoes"
-                />
-              </div> */}
-              <div className="flex flex-col justify-around pt-5 mt-5 md:pt-0">
-                <div className="">
-                  <h2 className="text-2xl font-semibold capitalize md:text-2xl lg:text-3xl">
-                    {project.name}
-                  </h2>
-                  <div className="pt-6 text-black md:text-xs lg:text-lg lg:block px-9 lg:pl-10">
-                    {project.description.length > 110
-                      ? project.description.slice(0, 50) + "..."
-                      : project.description}{" "}
-                  </div>
-                </div>
-                <div className="flex justify-center gap-4 pb-8 pt-7 md:pb-5 lg:py-5 lg:gap-4">
+            <div className="w-[20rem] mx-auto flex flex-col gap-2 px-4 shadow-lg border border-gray-300  rounded-lg bg-white dark:bg-gray-900 hover:shadow-2xl shadow-green-500/40 hover:shadow-green-500">
+              <div className="w-full h-full text-center flex flex-col gap-4 ">
+                <h2 className="text-xl font-serif capitalize pt-5 font-semibold text-gray-700 dark:text-gray-300">
+                  {project.name}
+                </h2>
+
+                <h3 className="text-xl text-white md:text-2xl mt-10">
+                  {project.description.length > 110
+                    ? project.description.slice(0, 50) + "..."
+                    : project.description}{" "}
+                </h3>
+                <div className="grid grid-cols-2 gap-3.5 pb-10 mt-10 justify-center">
                   {project.technologies.map((item, index) => (
-                    <div
-                      className="px-2 text-white transition duration-300 ease-in-out bg-accent/60 rounded-mid hover:scale-125 drop-shadow-xl"
+                    <button
                       key={index}
+                      className=" bg-blue-500 text-white rounded-3xl px-2 py-2"
                     >
-                      <p className="capitalize">{item}</p>
-                    </div>
+                      {item}
+                    </button>
                   ))}
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         ))}
       </div>

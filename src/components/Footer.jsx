@@ -1,12 +1,12 @@
 const Footer = () => {
   return (
-    <div className="">
-      <footer className="shadow bg-neutral/20 ">
+    <div className="absolute bottom-0 -z-1  inset-x-0">
+      <footer className="shadow  bg-neutral/20">
         <div className="w-full max-w-screen-xl p-4 mx-auto md:flex md:items-center md:justify-between">
           <span className="text-sm text-gray-700 sm:text-center">
             © 2023{" "}
             <a href="https://flowbite.com/" className="hover:underline">
-              Flowbite™
+              YourCompany
             </a>
             . All Rights Reserved.
           </span>
@@ -32,5 +32,6 @@ const Footer = () => {
     </div>
   );
 };
+
 
 export default Footer;
